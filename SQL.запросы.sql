@@ -1,0 +1,328 @@
+-- Создание таблицы для курсов с указанием движка и кодировки
+CREATE TABLE `courses` (
+  `course_id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `subject` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL COMMENT 'Стоимость курса (10 знаков, 2 после запятой)',
+  PRIMARY KEY (`course_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Создание таблицы для студентов с указанием движка и кодировки
+CREATE TABLE `students` (
+  `student_id` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- Очистка таблиц перед вставкой новых данных
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE courses;
+TRUNCATE TABLE students;
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Заполнение таблицы 'courses'
+
+INSERT INTO courses (course_id, title, subject, price) VALUES (1, 'Клиническая психология (продвинутый)', 'Психология', 13182.9);
+INSERT INTO courses (course_id, title, subject, price) VALUES (2, 'История философии (профессиональный)', 'Философия', 31744.11);
+INSERT INTO courses (course_id, title, subject, price) VALUES (3, 'Детская психология (полный курс)', 'Психология', 36238.66);
+INSERT INTO courses (course_id, title, subject, price) VALUES (4, 'Профессиональный английский язык', 'Английский язык', 43785.18);
+INSERT INTO courses (course_id, title, subject, price) VALUES (5, 'Археология (экспресс)', 'История', 13182.04);
+INSERT INTO courses (course_id, title, subject, price) VALUES (6, 'Python для начинающих (полный курс)', 'Программирование', 16351.45);
+INSERT INTO courses (course_id, title, subject, price) VALUES (7, 'Восточная философия (профессиональный)', 'Философия', 33516.03);
+INSERT INTO courses (course_id, title, subject, price) VALUES (8, 'Профессиональный маркетинг (базовый)', 'Маркетинг', 42662.65);
+INSERT INTO courses (course_id, title, subject, price) VALUES (9, 'Финансовый менеджмент (продвинутый)', 'Экономика', 24767.51);
+INSERT INTO courses (course_id, title, subject, price) VALUES (10, 'История философии (продвинутый)', 'Философия', 26161.46);
+INSERT INTO courses (course_id, title, subject, price) VALUES (11, 'Занимательная аналитика (базовый)', 'Аналитика', 18268.83);
+INSERT INTO courses (course_id, title, subject, price) VALUES (12, 'Профессиональный английский язык (экспресс)', 'Английский язык', 20354.21);
+INSERT INTO courses (course_id, title, subject, price) VALUES (13, 'Политическая философия (профессиональный)', 'Философия', 18960.08);
+INSERT INTO courses (course_id, title, subject, price) VALUES (14, 'Математическая логика (полный курс)', 'Математика', 10045.44);
+INSERT INTO courses (course_id, title, subject, price) VALUES (15, 'Сетевые технологии (интенсив)', 'Информатика', 44113.97);
+INSERT INTO courses (course_id, title, subject, price) VALUES (16, 'Бренд-менеджмент (продвинутый)', 'Маркетинг', 38276.06);
+INSERT INTO courses (course_id, title, subject, price) VALUES (17, 'Операционные системы (экспресс)', 'Информатика', 20493.7);
+INSERT INTO courses (course_id, title, subject, price) VALUES (18, 'Клиническая психология (полный курс)', 'Психология', 17616.47);
+INSERT INTO courses (course_id, title, subject, price) VALUES (19, 'История России (продвинутый)', 'История', 5549.68);
+INSERT INTO courses (course_id, title, subject, price) VALUES (20, 'Бренд-менеджмент (интенсив)', 'Маркетинг', 12175.45);
+INSERT INTO courses (course_id, title, subject, price) VALUES (21, 'Профессиональная история (продвинутый)', 'История', 7539.9);
+INSERT INTO courses (course_id, title, subject, price) VALUES (22, 'Курсы для начинающих психологов (профессиональный)', 'Психология', 29950.97);
+INSERT INTO courses (course_id, title, subject, price) VALUES (23, 'Клиническая психология', 'Психология', 33272.18);
+INSERT INTO courses (course_id, title, subject, price) VALUES (24, 'Мастер-класс по английскому языку (продвинутый)', 'Английский язык', 35249.26);
+INSERT INTO courses (course_id, title, subject, price) VALUES (25, 'Информатика в повседневной жизни (интенсив)', 'Информатика', 49704.21);
+INSERT INTO courses (course_id, title, subject, price) VALUES (26, 'Английский для IT', 'Английский язык', 9434.18);
+INSERT INTO courses (course_id, title, subject, price) VALUES (27, 'Web-разработка (интенсив)', 'Программирование', 46451.11);
+INSERT INTO courses (course_id, title, subject, price) VALUES (28, 'Визуализация данных (профессиональный)', 'Аналитика', 27012.76);
+INSERT INTO courses (course_id, title, subject, price) VALUES (29, 'Big Data аналитика (продвинутый)', 'Аналитика', 25466.04);
+INSERT INTO courses (course_id, title, subject, price) VALUES (30, 'Сетевые технологии (интенсив)', 'Информатика', 34658.02);
+INSERT INTO courses (course_id, title, subject, price) VALUES (31, 'Искусственный интеллект (профессиональный)', 'Информатика', 31549.19);
+INSERT INTO courses (course_id, title, subject, price) VALUES (32, 'Химия для начинающих (полный курс)', 'Химия', 8863.49);
+INSERT INTO courses (course_id, title, subject, price) VALUES (33, 'Компьютерные сети (базовый)', 'Информатика', 17751.16);
+INSERT INTO courses (course_id, title, subject, price) VALUES (34, 'Профессиональная психология (профессиональный)', 'Психология', 12746.43);
+INSERT INTO courses (course_id, title, subject, price) VALUES (35, 'Информатика в повседневной жизни (продвинутый)', 'Информатика', 28149.27);
+INSERT INTO courses (course_id, title, subject, price) VALUES (36, 'Разговорный английский', 'Английский язык', 47520.95);
+INSERT INTO courses (course_id, title, subject, price) VALUES (37, 'Профессиональная психология (интенсив)', 'Психология', 33936.73);
+INSERT INTO courses (course_id, title, subject, price) VALUES (38, 'Email-маркетинг (экспресс)', 'Маркетинг', 46020.32);
+INSERT INTO courses (course_id, title, subject, price) VALUES (39, 'История России (интенсив)', 'История', 13798.37);
+INSERT INTO courses (course_id, title, subject, price) VALUES (40, 'Машинное обучение (продвинутый)', 'Информатика', 43710.33);
+INSERT INTO courses (course_id, title, subject, price) VALUES (41, 'Компьютерные сети (базовый)', 'Информатика', 49464.49);
+INSERT INTO courses (course_id, title, subject, price) VALUES (42, 'Искусственный интеллект (продвинутый)', 'Информатика', 25600.24);
+INSERT INTO courses (course_id, title, subject, price) VALUES (43, 'Бизнес-аналитика (экспресс)', 'Аналитика', 19021.57);
+INSERT INTO courses (course_id, title, subject, price) VALUES (44, 'Мастер-классы для бухгалтеров (профессиональный)', 'Экономика', 11757.97);
+INSERT INTO courses (course_id, title, subject, price) VALUES (45, 'В мире истории (интенсив)', 'История', 45182.51);
+INSERT INTO courses (course_id, title, subject, price) VALUES (46, 'Анализ данных с нуля', 'Аналитика', 28701.05);
+INSERT INTO courses (course_id, title, subject, price) VALUES (47, 'Интенсивный курс химии (профессиональный)', 'Химия', 18700.33);
+INSERT INTO courses (course_id, title, subject, price) VALUES (48, 'В мире истории (базовый)', 'История', 32081.04);
+INSERT INTO courses (course_id, title, subject, price) VALUES (49, 'Английский для IT (продвинутый)', 'Английский язык', 12515.31);
+INSERT INTO courses (course_id, title, subject, price) VALUES (50, 'История России (экспресс)', 'История', 27042.97);
+INSERT INTO courses (course_id, title, subject, price) VALUES (51, 'Этическая философия (продвинутый)', 'Философия', 11271.88);
+INSERT INTO courses (course_id, title, subject, price) VALUES (52, 'Когнитивная психология (базовый)', 'Психология', 46824.78);
+INSERT INTO courses (course_id, title, subject, price) VALUES (53, 'Компьютерные сети (экспресс)', 'Информатика', 15049.44);
+INSERT INTO courses (course_id, title, subject, price) VALUES (54, 'SMM маркетинг (продвинутый)', 'Маркетинг', 30788.23);
+INSERT INTO courses (course_id, title, subject, price) VALUES (55, 'Информатика в повседневной жизни (интенсив)', 'Информатика', 18100.22);
+INSERT INTO courses (course_id, title, subject, price) VALUES (56, 'Бизнес-аналитика (интенсив)', 'Аналитика', 37458.86);
+INSERT INTO courses (course_id, title, subject, price) VALUES (57, 'SMM маркетинг (базовый)', 'Маркетинг', 41169.61);
+INSERT INTO courses (course_id, title, subject, price) VALUES (58, 'Деловой английский (базовый)', 'Английский язык', 31863.15);
+INSERT INTO courses (course_id, title, subject, price) VALUES (59, 'Математическая логика (продвинутый)', 'Математика', 14409.23);
+INSERT INTO courses (course_id, title, subject, price) VALUES (60, 'Email-маркетинг (продвинутый)', 'Маркетинг', 35535.82);
+INSERT INTO courses (course_id, title, subject, price) VALUES (61, 'Сетевые технологии (базовый)', 'Информатика', 46122.25);
+INSERT INTO courses (course_id, title, subject, price) VALUES (62, 'Химия для начинающих (полный курс)', 'Химия', 46401.35);
+INSERT INTO courses (course_id, title, subject, price) VALUES (63, 'Анализ данных с нуля (профессиональный)', 'Аналитика', 49482.23);
+INSERT INTO courses (course_id, title, subject, price) VALUES (64, 'Неорганическая химия (продвинутый)', 'Химия', 22750.2);
+INSERT INTO courses (course_id, title, subject, price) VALUES (65, 'Химия для начинающих (экспресс)', 'Химия', 26599.42);
+INSERT INTO courses (course_id, title, subject, price) VALUES (66, 'Такая разная экономика (полный курс)', 'Экономика', 26874.27);
+INSERT INTO courses (course_id, title, subject, price) VALUES (67, 'Анализ данных с нуля (продвинутый)', 'Аналитика', 24874.13);
+INSERT INTO courses (course_id, title, subject, price) VALUES (68, 'Java программирование', 'Программирование', 21329.43);
+INSERT INTO courses (course_id, title, subject, price) VALUES (69, 'Международная экономика', 'Экономика', 31519.27);
+INSERT INTO courses (course_id, title, subject, price) VALUES (70, 'Профессиональный маркетинг (полный курс)', 'Маркетинг', 11392.29);
+INSERT INTO courses (course_id, title, subject, price) VALUES (71, 'Интенсивный курс программирования (полный курс)', 'Программирование', 29736.59);
+INSERT INTO courses (course_id, title, subject, price) VALUES (72, 'Когнитивная психология (экспресс)', 'Психология', 36098.25);
+INSERT INTO courses (course_id, title, subject, price) VALUES (73, 'Визуализация данных (продвинутый)', 'Аналитика', 21916.82);
+INSERT INTO courses (course_id, title, subject, price) VALUES (74, 'Финансовый менеджмент (полный курс)', 'Экономика', 47304.79);
+INSERT INTO courses (course_id, title, subject, price) VALUES (75, 'Современные методы анализа данных (интенсив)', 'Аналитика', 23964.61);
+INSERT INTO courses (course_id, title, subject, price) VALUES (76, 'Психология личности (продвинутый)', 'Психология', 39503.9);
+INSERT INTO courses (course_id, title, subject, price) VALUES (77, 'Компьютерные сети (интенсив)', 'Информатика', 17538.82);
+INSERT INTO courses (course_id, title, subject, price) VALUES (78, 'Профессиональный английский язык (продвинутый)', 'Английский язык', 21463.16);
+INSERT INTO courses (course_id, title, subject, price) VALUES (79, 'Статистический анализ (полный курс)', 'Аналитика', 36764.75);
+INSERT INTO courses (course_id, title, subject, price) VALUES (80, 'Аналитика в Excel (полный курс)', 'Аналитика', 7624.85);
+INSERT INTO courses (course_id, title, subject, price) VALUES (81, 'Профессиональная психология (профессиональный)', 'Психология', 47514.74);
+INSERT INTO courses (course_id, title, subject, price) VALUES (82, 'Теория вероятностей (экспресс)', 'Математика', 28114.11);
+INSERT INTO courses (course_id, title, subject, price) VALUES (83, 'Визуализация данных (базовый)', 'Аналитика', 20289.62);
+INSERT INTO courses (course_id, title, subject, price) VALUES (84, 'Java программирование (интенсив)', 'Программирование', 26025.83);
+INSERT INTO courses (course_id, title, subject, price) VALUES (85, 'Мобильная разработка (экспресс)', 'Программирование', 40064.77);
+INSERT INTO courses (course_id, title, subject, price) VALUES (86, 'Цифровой маркетинг (интенсив)', 'Маркетинг', 47967.47);
+INSERT INTO courses (course_id, title, subject, price) VALUES (87, 'Подготовка к IELTS (базовый)', 'Английский язык', 13191.48);
+INSERT INTO courses (course_id, title, subject, price) VALUES (88, 'Искусственный интеллект (продвинутый)', 'Информатика', 38156.78);
+INSERT INTO courses (course_id, title, subject, price) VALUES (89, 'Профессиональный маркетинг (экспресс)', 'Маркетинг', 6798.41);
+INSERT INTO courses (course_id, title, subject, price) VALUES (90, 'Дифференциальные уравнения (интенсив)', 'Математика', 22137.43);
+INSERT INTO courses (course_id, title, subject, price) VALUES (91, 'Английская грамматика (профессиональный)', 'Английский язык', 12688.12);
+INSERT INTO courses (course_id, title, subject, price) VALUES (92, 'Искусственный интеллект (полный курс)', 'Информатика', 7729.83);
+INSERT INTO courses (course_id, title, subject, price) VALUES (93, 'Всемирная история (экспресс)', 'История', 30196.59);
+INSERT INTO courses (course_id, title, subject, price) VALUES (94, 'Визуализация данных (продвинутый)', 'Аналитика', 13690.46);
+INSERT INTO courses (course_id, title, subject, price) VALUES (95, 'История Древнего мира (экспресс)', 'История', 11292.36);
+INSERT INTO courses (course_id, title, subject, price) VALUES (96, 'Банковское дело (полный курс)', 'Экономика', 37811.6);
+INSERT INTO courses (course_id, title, subject, price) VALUES (97, 'Современная философия (базовый)', 'Философия', 49816.58);
+INSERT INTO courses (course_id, title, subject, price) VALUES (98, 'Восточная философия (базовый)', 'Философия', 15324.47);
+INSERT INTO courses (course_id, title, subject, price) VALUES (99, 'Этическая философия (полный курс)', 'Философия', 21182.84);
+INSERT INTO courses (course_id, title, subject, price) VALUES (100, 'Статистический анализ (интенсив)', 'Аналитика', 29598.41);
+INSERT INTO courses (course_id, title, subject, price) VALUES (101, 'Аналитика в Excel (интенсив)', 'Аналитика', 17540.25);
+INSERT INTO courses (course_id, title, subject, price) VALUES (102, 'Психология личности (полный курс)', 'Психология', 23668.88);
+INSERT INTO courses (course_id, title, subject, price) VALUES (103, 'Разговорный английский (интенсив)', 'Английский язык', 49532.14);
+INSERT INTO courses (course_id, title, subject, price) VALUES (104, 'Органическая химия (интенсив)', 'Химия', 42530.25);
+INSERT INTO courses (course_id, title, subject, price) VALUES (105, 'Политическая философия (профессиональный)', 'Философия', 38170.3);
+INSERT INTO courses (course_id, title, subject, price) VALUES (106, 'Философия науки', 'Философия', 45499.61);
+INSERT INTO courses (course_id, title, subject, price) VALUES (107, 'Контент-маркетинг (интенсив)', 'Маркетинг', 19529.25);
+INSERT INTO courses (course_id, title, subject, price) VALUES (108, 'Философия науки (полный курс)', 'Философия', 7741.43);
+INSERT INTO courses (course_id, title, subject, price) VALUES (109, 'Цифровой маркетинг (профессиональный)', 'Маркетинг', 42906.76);
+INSERT INTO courses (course_id, title, subject, price) VALUES (110, 'Интенсивный курс химии (полный курс)', 'Химия', 40047.96);
+INSERT INTO courses (course_id, title, subject, price) VALUES (111, 'Бизнес-аналитика (экспресс)', 'Аналитика', 21861.06);
+INSERT INTO courses (course_id, title, subject, price) VALUES (112, 'История философии', 'Философия', 28052.08);
+INSERT INTO courses (course_id, title, subject, price) VALUES (113, 'Мастер-класс по английскому языку (профессиональный)', 'Английский язык', 13923.52);
+INSERT INTO courses (course_id, title, subject, price) VALUES (114, 'Профессиональная психология (полный курс)', 'Психология', 6379.21);
+INSERT INTO courses (course_id, title, subject, price) VALUES (115, 'Теория чисел (профессиональный)', 'Математика', 13193.17);
+INSERT INTO courses (course_id, title, subject, price) VALUES (116, 'Вычислительная математика (профессиональный)', 'Математика', 25159.24);
+INSERT INTO courses (course_id, title, subject, price) VALUES (117, 'Анализ данных с нуля (полный курс)', 'Аналитика', 27230.43);
+INSERT INTO courses (course_id, title, subject, price) VALUES (118, 'История Древнего мира', 'История', 8756.2);
+INSERT INTO courses (course_id, title, subject, price) VALUES (119, 'Занимательная философия (интенсив)', 'Философия', 25913.8);
+INSERT INTO courses (course_id, title, subject, price) VALUES (120, 'Теория чисел (профессиональный)', 'Математика', 19492.75);
+INSERT INTO courses (course_id, title, subject, price) VALUES (121, 'Клиническая психология (интенсив)', 'Психология', 24744.47);
+INSERT INTO courses (course_id, title, subject, price) VALUES (122, 'SMM маркетинг (профессиональный)', 'Маркетинг', 26057.09);
+INSERT INTO courses (course_id, title, subject, price) VALUES (123, 'Бизнес-аналитика (базовый)', 'Аналитика', 10293.1);
+INSERT INTO courses (course_id, title, subject, price) VALUES (124, 'Линейная алгебра (экспресс)', 'Математика', 19031.17);
+INSERT INTO courses (course_id, title, subject, price) VALUES (125, 'Визуализация данных (продвинутый)', 'Аналитика', 33321.42);
+INSERT INTO courses (course_id, title, subject, price) VALUES (126, 'История искусств (полный курс)', 'История', 41134.96);
+INSERT INTO courses (course_id, title, subject, price) VALUES (127, 'Бизнес-аналитика (продвинутый)', 'Аналитика', 46008.03);
+INSERT INTO courses (course_id, title, subject, price) VALUES (128, 'Математическая логика', 'Математика', 33985.75);
+INSERT INTO courses (course_id, title, subject, price) VALUES (129, 'Бренд-менеджмент (базовый)', 'Маркетинг', 31940.77);
+INSERT INTO courses (course_id, title, subject, price) VALUES (130, 'Физическая химия (продвинутый)', 'Химия', 33821.99);
+INSERT INTO courses (course_id, title, subject, price) VALUES (131, 'Математический анализ (базовый)', 'Математика', 41997.52);
+INSERT INTO courses (course_id, title, subject, price) VALUES (132, 'История Древнего мира (продвинутый)', 'История', 48616.81);
+INSERT INTO courses (course_id, title, subject, price) VALUES (133, 'Математическая логика (полный курс)', 'Математика', 45700.2);
+INSERT INTO courses (course_id, title, subject, price) VALUES (134, 'Сетевые технологии (базовый)', 'Информатика', 39024.51);
+INSERT INTO courses (course_id, title, subject, price) VALUES (135, 'Химия полимеров (продвинутый)', 'Химия', 14035.87);
+INSERT INTO courses (course_id, title, subject, price) VALUES (136, 'История России (интенсив)', 'История', 32394.04);
+INSERT INTO courses (course_id, title, subject, price) VALUES (137, 'Когнитивная психология (полный курс)', 'Психология', 12394.26);
+INSERT INTO courses (course_id, title, subject, price) VALUES (138, 'Современная философия (экспресс)', 'Философия', 36178.7);
+INSERT INTO courses (course_id, title, subject, price) VALUES (139, 'Подготовка к IELTS (экспресс)', 'Английский язык', 10975.24);
+INSERT INTO courses (course_id, title, subject, price) VALUES (140, 'Python для начинающих (полный курс)', 'Программирование', 26841.01);
+INSERT INTO courses (course_id, title, subject, price) VALUES (141, 'Компьютерные сети (экспресс)', 'Информатика', 38717.32);
+INSERT INTO courses (course_id, title, subject, price) VALUES (142, 'Сетевые технологии (профессиональный)', 'Информатика', 26376.81);
+INSERT INTO courses (course_id, title, subject, price) VALUES (143, 'Такая разная экономика (продвинутый)', 'Экономика', 5157.41);
+INSERT INTO courses (course_id, title, subject, price) VALUES (144, 'Маркетинговые исследования (экспресс)', 'Маркетинг', 21026.61);
+INSERT INTO courses (course_id, title, subject, price) VALUES (145, 'Искусственный интеллект (полный курс)', 'Информатика', 40252.77);
+
+-- Заполнение таблицы 'students'
+
+INSERT INTO students (student_id, first_name, email) VALUES (1, 'Дарья Голубева', 'дарья.голубева@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (2, 'Даниил Лебедев', 'даниил.лебедев@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (3, 'Роман Федоров', 'роман.федоров@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (4, 'Виктория Попова', 'виктория.попова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (5, 'Максим Попов', 'максим.попов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (6, 'Ксения Козлова', 'ксения.козлова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (7, 'Полина Голубева', 'полина.голубева@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (8, 'Егор Смирнов', 'егор.смирнов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (9, 'Ольга Морозова', 'ольга.морозова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (10, 'Валерия Иванова', 'валерия.иванова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (11, 'Анастасия Сидорова', 'анастасия.сидорова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (12, 'Тимофей Морозов', 'тимофей.морозов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (13, 'Сергей Федоров', 'сергей.федоров@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (14, 'Дмитрий Козлов', 'дмитрий.козлов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (15, 'Юлия Сидорова', 'юлия.сидорова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (16, 'Мария Козлова', 'мария.козлова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (17, 'Андрей Сидоров', 'андрей.сидоров@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (18, 'Валерия Федорова', 'валерия.федорова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (19, 'Валерия Морозова', 'валерия.морозова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (20, 'Александр Морозов', 'александр.морозов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (21, 'Юлия Новикова', 'юлия.новикова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (22, 'Петр Волков', 'петр.волков@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (23, 'Тимофей Павлов', 'тимофей.павлов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (24, 'Артем Петров', 'артем.петров@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (25, 'Ксения Павлова', 'ксения.павлова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (26, 'Кирилл Федоров', 'кирилл.федоров@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (27, 'Роман Иванов', 'роман.иванов@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (28, 'Наталья Лебедева', 'наталья.лебедева@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (29, 'Петр Иванов', 'петр.иванов@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (30, 'Маргарита Павлова', 'маргарита.павлова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (31, 'Владимир Попов', 'владимир.попов@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (32, 'Екатерина Волкова', 'екатерина.волкова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (33, 'Игорь Иванов', 'игорь.иванов@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (34, 'София Богданова', 'софия.богданова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (35, 'Артем Козлов', 'артем.козлов@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (36, 'Дмитрий Кузнецов', 'дмитрий.кузнецов@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (37, 'Елена Голубева', 'елена.голубева@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (38, 'Елена Морозова', 'елена.морозова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (39, 'Татьяна Павлова', 'татьяна.павлова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (40, 'Игорь Павлов', 'игорь.павлов@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (41, 'Андрей Петров', 'андрей.петров@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (42, 'Михаил Смирнов', 'михаил.смирнов@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (43, 'Виктория Богданова', 'виктория.богданова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (44, 'Михаил Сидоров', 'михаил.сидоров@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (45, 'Ксения Павлова', 'ксения.павлова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (46, 'Артем Морозов', 'артем.морозов@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (47, 'Сергей Соколов', 'сергей.соколов@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (48, 'Михаил Зайцев', 'михаил.зайцев@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (49, 'Наталья Иванова', 'наталья.иванова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (50, 'Полина Морозова', 'полина.морозова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (51, 'Никита Федоров', 'никита.федоров@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (52, 'Андрей Зайцев', 'андрей.зайцев@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (53, 'София Петрова', 'софия.петрова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (54, 'Ольга Кузнецова', 'ольга.кузнецова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (55, 'Ксения Иванова', 'ксения.иванова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (56, 'София Зайцева', 'софия.зайцева@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (57, 'Юлия Голубева', 'юлия.голубева@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (58, 'Маргарита Голубева', 'маргарита.голубева@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (59, 'Никита Новиков', 'никита.новиков@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (60, 'Тимофей Волков', 'тимофей.волков@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (61, 'Полина Соколова', 'полина.соколова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (62, 'Петр Федоров', 'петр.федоров@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (63, 'Маргарита Смирнова', 'маргарита.смирнова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (64, 'Петр Лебедев', 'петр.лебедев@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (65, 'Александра Соколова', 'александра.соколова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (66, 'Егор Богданов', 'егор.богданов@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (67, 'Павел Волков', 'павел.волков@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (68, 'Татьяна Волкова', 'татьяна.волкова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (69, 'Екатерина Павлова', 'екатерина.павлова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (70, 'Глеб Виноградов', 'глеб.виноградов@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (71, 'Андрей Богданов', 'андрей.богданов@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (72, 'Александра Новикова', 'александра.новикова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (73, 'Ксения Сидорова', 'ксения.сидорова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (74, 'Никита Кузнецов', 'никита.кузнецов@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (75, 'Глеб Сидоров', 'глеб.сидоров@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (76, 'Татьяна Семенова', 'татьяна.семенова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (77, 'Сергей Попов', 'сергей.попов@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (78, 'Елена Федорова', 'елена.федорова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (79, 'Мария Попова', 'мария.попова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (80, 'Валерия Попова', 'валерия.попова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (81, 'Александр Васильев', 'александр.васильев@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (82, 'Никита Кузнецов', 'никита.кузнецов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (83, 'Екатерина Кузнецова', 'екатерина.кузнецова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (84, 'Алина Павлова', 'алина.павлова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (85, 'Александра Иванова', 'александра.иванова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (86, 'Максим Соколов', 'максим.соколов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (87, 'Сергей Голубев', 'сергей.голубев@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (88, 'Михаил Петров', 'михаил.петров@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (89, 'Владимир Соколов', 'владимир.соколов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (90, 'Алексей Виноградов', 'алексей.виноградов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (91, 'Игорь Виноградов', 'игорь.виноградов@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (92, 'Максим Петров', 'максим.петров@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (93, 'Мария Морозова', 'мария.морозова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (94, 'Тимофей Зайцев', 'тимофей.зайцев@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (95, 'Петр Лебедев', 'петр.лебедев@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (96, 'Виктория Федорова', 'виктория.федорова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (97, 'Тимофей Смирнов', 'тимофей.смирнов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (98, 'Светлана Зайцева', 'светлана.зайцева@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (99, 'Петр Виноградов', 'петр.виноградов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (100, 'Александр Васильев', 'александр.васильев@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (101, 'Ксения Павлова', 'ксения.павлова65@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (102, 'Артем Смирнов', 'артем.смирнов@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (103, 'Сергей Волков', 'сергей.волков@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (104, 'Андрей Федоров', 'андрей.федоров@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (105, 'Полина Соколова', 'полина.соколова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (106, 'Роман Кузнецов', 'роман.кузнецов@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (107, 'Владимир Козлов', 'владимир.козлов@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (108, 'Ксения Богданова', 'ксения.богданова@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (109, 'Анна Морозова', 'анна.морозова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (110, 'Игорь Лебедев', 'игорь.лебедев@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (111, 'Петр Виноградов', 'петр.виноградов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (112, 'Дмитрий Новиков', 'дмитрий.новиков@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (113, 'Тимофей Кузнецов', 'тимофей.кузнецов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (114, 'Иван Виноградов', 'иван.виноградов@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (115, 'Даниил Смирнов', 'даниил.смирнов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (116, 'Александр Иванов', 'александр.иванов@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (117, 'Михаил Морозов', 'михаил.морозов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (118, 'Андрей Козлов', 'андрей.козлов@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (119, 'Александр Федоров', 'александр.федоров@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (120, 'Дарья Новикова', 'дарья.новикова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (121, 'Мария Семенова', 'мария.семенова@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (122, 'Наталья Павлова', 'наталья.павлова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (123, 'Ольга Волкова', 'ольга.волкова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (124, 'Михаил Петров', 'михаил.петров@rambler.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (125, 'Светлана Козлова', 'светлана.козлова@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (126, 'Татьяна Иванова', 'татьяна.иванова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (127, 'Дарья Петрова', 'дарья.петрова@icloud.com');
+INSERT INTO students (student_id, first_name, email) VALUES (128, 'Егор Павлов', 'егор.павлов@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (129, 'Роман Семенов', 'роман.семенов@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (130, 'Глеб Кузнецов', 'глеб.кузнецов@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (131, 'Маргарита Попова', 'маргарита.попова@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (132, 'Максим Смирнов', 'максим.смирнов@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (133, 'Анастасия Смирнова', 'анастасия.смирнова@protonmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (134, 'Анастасия Семенова', 'анастасия.семенова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (135, 'Виктория Иванова', 'виктория.иванова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (136, 'Виктория Кузнецова', 'виктория.кузнецова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (137, 'Татьяна Зайцева', 'татьяна.зайцева@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (138, 'Дарья Зайцева', 'дарья.зайцева@gmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (139, 'Кирилл Богданов', 'кирилл.богданов@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (140, 'Ксения Богданова', 'ксения.богданова335@outlook.com');
+INSERT INTO students (student_id, first_name, email) VALUES (141, 'Юлия Попова', 'юлия.попова@mail.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (142, 'Мария Богданова', 'мария.богданова@yandex.ru');
+INSERT INTO students (student_id, first_name, email) VALUES (143, 'Маргарита Иванова', 'маргарита.иванова@hotmail.com');
+INSERT INTO students (student_id, first_name, email) VALUES (144, 'Артем Морозов', 'артем.морозов@protonmail.com');
+
+
+SELECT * FROM `courses`;
+
+
+-- Выборка всех курсов по предмету "Аналитика"
+SELECT *
+FROM `courses`
+WHERE `subject` = 'Аналитика';
